@@ -8,13 +8,13 @@ countries = pd.DataFrame({
     "life_expectancy": [74, 70, 82, 83, 84, 73]
 })
 
-print("\n===Countries with life_expectancy ===")
+print("\n=== Countries with life_expectancy ===")
 print(countries[countries["life_expectancy"] > 75])
 
-print("\n===Average GDP per continent ===")
+print("\n=== Average GDP per continent ===")
 print(countries.groupby("continent")["gdp"].mean())
 
-print("\n===Sprt by population descending===")
+print("\n=== Sort by population descending===")
 print(countries.sort_values(by="pupulation", ascending=False))
 
 print("\n===New column ===")
