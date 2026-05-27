@@ -26,3 +26,10 @@ print(df.groupby("color")["price"].mean())
 
 df.to_csv("diamonds.csv", index=False)
 print("Saved!")
+
+print(df[["carat", "price", "depth"]].corr())
+
+print(df.pivot_table(values="price", index="cut", columns="color", aggfunc="mean"))
+
+df["value_score"] = df["carat"] / df["price"]
+print(df.groupby(["cut", "color"])["value_score"].mean().sort_values(ascending=False).head(10))
