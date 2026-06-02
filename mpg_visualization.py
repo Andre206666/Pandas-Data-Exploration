@@ -1,0 +1,116 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("https://raw.githubusercontent.com/mwaskom/seaborn-data/master/mpg.csv")
+
+
+plt.figure(figsize=(10, 6))
+plt.scatter(df["weight"], df["mpg"])
+plt.title("Weight vs MPG")
+plt.xlabel("Weight")
+plt.ylabel("MPG")
+plt.show()
+
+plt.figure(figsize=(8, 5))
+df.groupby("origin")["mpg"].mean().plot(kind="bar", color=["blue", "red", "green"])
+plt.title("Average MPG by Origin")
+plt.xlabel("Origin")
+plt.ylabel("Average MPG")
+plt.xticks(rotation=0)
+plt.show()
+
+plt.figure(figsize=(8, 5))
+plt.hist(df["mpg"], bins=20, color="purple", edgecolor="black")
+plt.title("MPG Distribution")
+plt.xlabel("MPG")
+plt.ylabel("Count")
+plt.show()
+
+plt.figure(figsize=(8, 5))
+df.groupby("horsepower")["origin"].mean().plot(kind="bar")
+plt.title("Horse power vs origin")
+plt.xlabel("horsepower")
+plt.ylabel("origin")
+plt.show()
+
+plt.figure(figsize=(10, 6))
+df.groupby("model_year")["mpg"].mean().plot(kind="line", color="orange", marker="o")
+plt.title("Average MPG Over Years")
+plt.xlabel("Year")
+plt.ylabel("Average MPG")
+plt.show()
+
+plt.figure(figsize=(8, 5))
+df.groupby("origin")["horsepower"].mean().plot(kind="bar", color=["blue", "red", "green"])
+plt.title("Average Horsepower by Origin")
+plt.xlabel("Origin")
+plt.ylabel("Horsepower")
+plt.xticks(rotation=0)
+plt.show()
+
+plt.figure(figsize=(10, 6))
+plt.scatter(df["horsepower"], df["mpg"], color="red", alpha=0.5)
+plt.title("Horsepower vs MPG")
+plt.xlabel("Horsepower")
+plt.ylabel("MPG")
+plt.show()
+
+plt.figure(figsize=(10, 6))
+df.groupby("model_year")["weight"].mean().plot(kind="line", color="green", marker="o")
+plt.title("Average Car Weight Over Years")
+plt.xlabel("Year")
+plt.ylabel("Weight")
+plt.show()
+
+plt.figure(figsize=(8, 5))
+df.groupby("cylinders")["mpg"].mean().plot(kind="bar")
+plt.title("Average MPG by Cylinders")
+plt.xlabel("Cylinders")
+plt.ylabel("MPG")
+plt.show()
+
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("https://raw.githubusercontent.com/mwaskom/seaborn-data/master/tips.csv")
+
+plt.figure(figsize=(8, 5))
+plt.scatter(df["total_bill"], df["tip"])
+plt.title("Bill vs Tip")
+plt.xlabel("Total Bill ($)")
+plt.ylabel("Tip ($)")
+plt.show()
+
+plt.figure(figsize=(8, 5))
+df.groupby("day")["tip"].mean().plot(kind="bar")
+plt.title("Average Tip per Day")
+plt.xlabel("Day")
+plt.ylabel("Average Tip")
+plt.show()
+
+plt.figure(figsize=(8, 5))
+plt.hist(df["total_bill"], bins=20)
+plt.title("Bill Distribution")
+plt.xlabel("Total Bill")
+plt.ylabel("Count")
+plt.show()
+
+plt.figure(figsize=(8, 5))
+df.groupby("sex")["total_bill"].mean().plot(kind="bar")
+plt.title("Bill Distribution")
+plt.xlabel("Total Bill")
+plt.ylabel("Avera bill per sex")
+plt.show()
+
+plt.figure(figsize=(8, 5))
+plt.scatter(df["size"], df["tip"])
+plt.title("Size vs tip")
+plt.xlabel("Size")
+plt.ylabel("Tip")
+plt.show()
+
+plt.figure(figsize=(8, 5))
+df.groupby("smoker")["tip"].mean().plot(kind="bar")
+plt.title("Smokers vs Tip")
+plt.xlabel("Smoker")
+plt.ylabel("Tip")
+plt.show()
