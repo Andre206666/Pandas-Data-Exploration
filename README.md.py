@@ -17,3 +17,5 @@ Collection of data analysis projects using Python, Pandas, Matplotlib and Seabor
 
 ## Author:
 Data science student — 2nd semester
+
+- **Iris Analysis** → species comparison using seaborn heatmap, scatter, barplot and histplot
