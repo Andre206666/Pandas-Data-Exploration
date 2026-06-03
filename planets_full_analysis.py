@@ -22,6 +22,7 @@ sns.heatmap(df[["number", "mass", "orbital_period"]].corr(),
 plt.title("Orbital period per method")
 plt.show()
 
+
 sns.barplot(data=df, x="method", y="number")
 plt.title("Average number of planets discovered per method")
 plt.show()
